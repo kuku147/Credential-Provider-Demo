@@ -1,5 +1,7 @@
 # Credential Provider Demo on C#
 
+![Credential Provider Demo](CustomProvider.jpg)
+
 ## Testing
 
 For testing, you need:
