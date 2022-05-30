@@ -12,7 +12,7 @@ regSvr32 .\OTP.Provider\bin\Debug\net6.0-windows\OTP.Provider.comhost.dll
 ```
 
 ## ATTENTION 
-When testing, you can access your workstation, after testing in your machine
+When testing, you can access your workstation, after testing in your machine.
 Run tests in a virtual machine
 
 ## Remove
