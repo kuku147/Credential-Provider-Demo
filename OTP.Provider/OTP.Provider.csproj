@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>annotations</Nullable>
+    <EnableComHosting>true</EnableComHosting>
+    <PlatformTarget>x64</PlatformTarget>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="tile.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="tile.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OTP.Provider.Helper\OTP.Provider.Helper.vcxproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OTP.Provider.Interop">
+      <HintPath>..\midl\OTP.Provider.Interop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="credential_provider_key.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;C:\Users\Administrator\source\repos\Demo\OTP\OTP.Provider.Helper\bin\Debug\OTP.Provider.Helper.dll&quot; &quot;C:\Users\Administrator\source\repos\Demo\OTP\OTP.Provider\bin\Debug\net6.0-windows\&quot; " />
+  </Target>
+
+</Project>

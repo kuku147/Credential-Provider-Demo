@@ -1,0 +1,1 @@
+﻿regSvr32 .\OTP.Provider\bin\Debug\net6.0-windows\OTP.Provider.comhost.dll
